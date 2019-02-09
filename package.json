@@ -98,5 +98,11 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "dependencies": {
+    "mapbox-gl": "^0.53.0",
+    "react-map-gl": "^4.0.10",
+    "react-mapbox-gl": "^4.1.0",
+    "styled-components": "^4.1.3"
   }
 }

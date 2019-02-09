@@ -10,17 +10,17 @@
         flex: 1 0 auto;
         flex-direction: column;
         justify-content: center;
-        padding: 3.25rem 1.5rem 1rem;
+        // padding: 3.25rem 1.5rem 1rem;
         text-align: center;
         @include breakpoint-small-down {
-            padding: 4.25rem 1.5rem 1rem;
+            // padding: 4.25rem 1.5rem 1rem;
         }
         .intro-wrapper {
             flex: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            text-align: center;
+            text-align: left;
             border: 2px solid;
             >.intro-name {
                 font-family: 'Reem Kufi', sans-serif;
@@ -45,8 +45,8 @@
         .browser-notes {
             font-size: 0.75rem;
             span {
-                border-width: 1px;
-                border-style: solid;
+                // border-width: 1px;
+                // border-style: solid;
                 padding: 0.125rem 0.5rem;
             }
         }

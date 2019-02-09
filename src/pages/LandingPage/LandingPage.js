@@ -1,23 +1,20 @@
 import React from 'react';
 import SocialIcons from '@components/SocialIcons';
 import BrowserNotes from '@components/BrowserNotes';
+import Title from '@components/Title';
 
 import './style.scss';
 
 const LandingPage = (props, context) => {
-  const colorPrimary = '#FFFFFF';
-  const bgPrimary = '#485564';
+  const colorPrimary = '#000000';
+  const bgPrimary = '#ffffff';
 
   return (
     <div style={{ backgroundColor: bgPrimary }} className="landing-page">
-
+      <Title />
       <main style={{ color: colorPrimary }}>
         <BrowserNotes />
         <div className="intro-wrapper">
-          <div className="intro-name">Hello, I'm Dhruv!</div>
-          <div className="tagline">
-            Full Stack Developer | Machine Learning Enthusiast 
-          </div>
           <SocialIcons />
         </div>
       </main>

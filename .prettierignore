@@ -1,0 +1,13 @@
+dist/
+internals/
+node_modules/
+release/
+.gitignore
+.npmrc
+.prettierrc
+angular.json
+package-lock.json
+package.json
+README.md 
+./tsconfig.json 
+./tslint.json
