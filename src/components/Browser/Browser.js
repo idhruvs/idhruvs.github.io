@@ -24,14 +24,12 @@ const shouldRenderForBrowser = (props, browsers) => {
 
   const only = props.only === true || typeof props.only === "undefined";
   const except = props.except === true;
-  console.log(props);
+
   if (except) {
     allBrowsers.forEach(browser => {
-      console.log(browser);
       if (props[browser]) restrictedBrowsers.push(browser);
       else allowedBrowsers.push(browser);
     });
-    console.log(restrictedBrowsers);
   } else if (only) {
     allBrowsers.forEach(browser => {
       if (props[browser]) allowedBrowsers.push(browser);
