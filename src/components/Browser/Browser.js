@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import browserCheck from './browser-check';
+import React from "react";
+import PropTypes from "prop-types";
+import browserCheck from "./browser-check";
 
 const getBrowsersArr = () => {
   const browsers = [
-    { name: 'mobile', isCurrentBrowser: browserCheck.isMobile() },
-    { name: 'chrome', isCurrentBrowser: browserCheck.isChrome() },
-    { name: 'firefox', isCurrentBrowser: browserCheck.isFirefox() },
-    { name: 'safari', isCurrentBrowser: browserCheck.isSafari() },
-    { name: 'opera', isCurrentBrowser: browserCheck.isOpera() },
-    { name: 'ie', isCurrentBrowser: browserCheck.isIE() },
-    { name: 'edge', isCurrentBrowser: browserCheck.isEdge() },
-    { name: 'blink', isCurrentBrowser: browserCheck.isBlink() }
+    { name: "mobile", isCurrentBrowser: browserCheck.isMobile() },
+    { name: "chrome", isCurrentBrowser: browserCheck.isChrome() },
+    { name: "firefox", isCurrentBrowser: browserCheck.isFirefox() },
+    { name: "safari", isCurrentBrowser: browserCheck.isSafari() },
+    { name: "opera", isCurrentBrowser: browserCheck.isOpera() },
+    { name: "ie", isCurrentBrowser: browserCheck.isIE() },
+    { name: "edge", isCurrentBrowser: browserCheck.isEdge() },
+    { name: "blink", isCurrentBrowser: browserCheck.isBlink() }
   ];
   return browsers;
 };
@@ -22,16 +22,18 @@ const shouldRenderForBrowser = (props, browsers) => {
   let restrictedBrowsers = [];
   let allowedBrowsers = [];
 
-  const only = props.only === true || typeof props.only === 'undefined';
+  const only = props.only === true || typeof props.only === "undefined";
   const except = props.except === true;
-
+  console.log(props);
   if (except) {
-    allBrowsers.forEach((browser) => {
+    allBrowsers.forEach(browser => {
+      console.log(browser);
       if (props[browser]) restrictedBrowsers.push(browser);
       else allowedBrowsers.push(browser);
     });
+    console.log(restrictedBrowsers);
   } else if (only) {
-    allBrowsers.forEach((browser) => {
+    allBrowsers.forEach(browser => {
       if (props[browser]) allowedBrowsers.push(browser);
       else restrictedBrowsers.push(browser);
     });
@@ -41,7 +43,7 @@ const shouldRenderForBrowser = (props, browsers) => {
   }
 
   const currentBrowser = browsers.find(
-    (browser) => browser.isCurrentBrowser === true
+    browser => browser.isCurrentBrowser === true
   );
   if (currentBrowser && restrictedBrowsers.includes(currentBrowser.name))
     return false;
@@ -50,7 +52,7 @@ const shouldRenderForBrowser = (props, browsers) => {
   else return false;
 };
 
-const Browser = (props) => {
+const Browser = props => {
   const { children } = props;
   const browsers = getBrowsersArr();
   const shouldRender = shouldRenderForBrowser(props, browsers);
