@@ -3,7 +3,7 @@ import React from 'react';
 import './style.scss';
 
 const SocialIcons = (props, context) => {
-  const colorPrimary = '#FFFFFF';
+  const colorPrimary = '#000000';
   return (
     <div className="social-icons animate-icons">
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/idhruvs" style={ { color: colorPrimary } }><i className="fab fa-github"></i></a>

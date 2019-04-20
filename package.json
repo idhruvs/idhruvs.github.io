@@ -101,6 +101,8 @@
   },
   "dependencies": {
     "mapbox-gl": "^0.53.0",
+    "moment": "^2.24.0",
+    "prop-types": "^15.6.2",
     "react-map-gl": "^4.0.10",
     "react-mapbox-gl": "^4.1.0",
     "styled-components": "^4.1.3"

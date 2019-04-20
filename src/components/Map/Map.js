@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
+import ReactMapboxGl, { Marker, Popup } from 'react-mapbox-gl';
 import MapMarker from './MapMarker';
+import MapPopup from './MapPopup';
 
 const accessTokens = {
     mapbox: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA', dhruv: 'pk.eyJ1IjoiZGhydXZzIiwiYSI6ImNqaGtsc25pZDA0ZnozMG1udzZrZTQ5c2QifQ.a3C-KtYZdFFX-afXlh_kJQ'
@@ -16,7 +17,9 @@ const Mapbox = ReactMapboxGl({
 });
 
 const locations = [
-    { id: 'loc1', position: [18.0686, 59.3293] }
+    { id: 'loc1', position: [18.0686, 59.3293], isCurrentLocation: true, location: 'Stockholm, Sweden', description: 'Current Location' },
+    { id: 'loc2', position: [72.1519, 21.7645], isCurrentLocation: false, location: 'Bhavnagar, India', description: 'Birth place'},
+    { id: 'loc3', position: [73.8567, 18.5204], isCurrentLocation: false, location: 'Pune, India', description: 'Graduation'},
 ]
 
 export default class Map extends Component {
@@ -24,26 +27,34 @@ export default class Map extends Component {
         super(props);
         this.map = {};
         this.state = {
-            center: [46.335685871710666, 48.339172448966565],
-            zoom: [1.2286151552661149],
+            center: [2.092969945132154, 40.4209136793379],
+            zoom: [1.60662053785177],
             containerStyle: {
                 flex: 1,
                 height: 400
             },
+            selectedLocation: undefined
         };
 
     }
     getMapCenter = () => {
-        // console.log(this.map.getCenter());
-        // console.log(this.map.getZoom());
+        const selectedLocation = undefined;
+        this.setState({...this.state, selectedLocation})
+        console.log(this.map.getCenter());
+        console.log(this.map.getZoom());
     }
 
     mapDidLoad = (mapInstance) => {
         this.map = mapInstance;
     }
 
+    onMarkerClick = (location) => {
+        const selectedLocation = location;
+        this.setState({...this.state, selectedLocation})
+    }
+
     render() {
-        const { center, zoom, containerStyle } = this.state;
+        const { center, zoom, containerStyle, selectedLocation } = this.state;
         return (
             <Mapbox
                 style={style.mapbox}
@@ -53,9 +64,16 @@ export default class Map extends Component {
                 onClick={this.getMapCenter}
                 onStyleLoad={this.mapDidLoad}
             >
-                <Marker coordinates={locations[0].position}>
-                    <MapMarker />
-                </Marker>
+                {Object.keys(locations).map((location, index) => (
+                    <Marker key={locations[index].id} coordinates={locations[index].position} onClick={this.onMarkerClick.bind(this, locations[index])}>
+                        <MapMarker isCurrentLocation={locations[index].isCurrentLocation} key={`mapmarker-${locations[index].id}`} />
+                    </Marker>
+                ))}
+                {selectedLocation && (
+                    <Popup key={selectedLocation.id} coordinates={selectedLocation.position}>
+                        <MapPopup {...selectedLocation}></MapPopup>
+                    </Popup>
+                )}
             </Mapbox>
         );
     }

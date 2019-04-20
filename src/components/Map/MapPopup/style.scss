@@ -1,0 +1,17 @@
+.popup-wrapper{
+    min-width: 200px;
+    max-width: 300px;
+    background-color: #ffffff;
+
+    .desc-text-wrapper{ 
+        display: flex;
+        flex-direction: row;
+        .desc-text-label{
+            flex-basis: 35%;
+            
+        }
+        .desc-text{
+            // flex-basis: 70%;
+        }
+    }
+}
