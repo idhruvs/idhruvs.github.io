@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom';
 import Browser from './Browser';
 
 describe('<Browser />', () => {
-
   beforeEach(() => {
     // mock chrome browser env
     window = window || {};
     window.chrome = window.chrome || {};
     window.chrome.webstore = window.chrome.webstore || {};
-    
   });
 
   it('should render', () => {

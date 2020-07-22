@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './style.scss'
+import './style.scss';
 
-const MapMarker = (props) => {
+const MapMarker = props => {
   const { isCurrentLocation } = props;
   return (
-    <div className={(isCurrentLocation ? 'current-location-marker' : 'map-marker')}></div>
+    <div
+      className={isCurrentLocation ? 'current-location-marker' : 'map-marker'}
+    />
   );
 };
 
 MapMarker.propTypes = {
-  isCurrentLocation: PropTypes.bool
+  isCurrentLocation: PropTypes.bool,
 };
 export default MapMarker;

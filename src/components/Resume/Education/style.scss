@@ -1,0 +1,30 @@
+.education-wrapper {
+	margin-bottom: 20px;
+	.education-title {
+		padding: 5px;
+		line-height: 20px;
+		word-spacing: 2px;
+		letter-spacing: 2px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: rgba(0, 0, 0, 0.6);
+	}
+	.education-section {
+		display: flex;
+		padding: 5px;
+		line-height: 18px;
+		letter-spacing: 2px;
+		.icon {
+			flex: 1 1;
+
+			.skill-logo {
+				width: 15px;
+			}
+		}
+
+		.content {
+			flex: 8 1;
+			font-size: 11px;
+		}
+	}
+}

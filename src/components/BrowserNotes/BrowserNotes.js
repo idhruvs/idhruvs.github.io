@@ -1,5 +1,5 @@
-import React from "react";
-import Browser from "@components/Browser";
+import React from 'react';
+import Browser from '@components/Browser';
 
 const BrowserNotes = () => {
   return (

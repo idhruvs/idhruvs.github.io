@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import browserCheck from "./browser-check";
+import React from 'react';
+import PropTypes from 'prop-types';
+import browserCheck from './browser-check';
 
 const getBrowsersArr = () => {
   const browsers = [
-    { name: "mobile", isCurrentBrowser: browserCheck.isMobile() },
-    { name: "chrome", isCurrentBrowser: browserCheck.isChrome() },
-    { name: "firefox", isCurrentBrowser: browserCheck.isFirefox() },
-    { name: "safari", isCurrentBrowser: browserCheck.isSafari() },
-    { name: "opera", isCurrentBrowser: browserCheck.isOpera() },
-    { name: "ie", isCurrentBrowser: browserCheck.isIE() },
-    { name: "edge", isCurrentBrowser: browserCheck.isEdge() },
-    { name: "blink", isCurrentBrowser: browserCheck.isBlink() }
+    { name: 'mobile', isCurrentBrowser: browserCheck.isMobile() },
+    { name: 'chrome', isCurrentBrowser: browserCheck.isChrome() },
+    { name: 'firefox', isCurrentBrowser: browserCheck.isFirefox() },
+    { name: 'safari', isCurrentBrowser: browserCheck.isSafari() },
+    { name: 'opera', isCurrentBrowser: browserCheck.isOpera() },
+    { name: 'ie', isCurrentBrowser: browserCheck.isIE() },
+    { name: 'edge', isCurrentBrowser: browserCheck.isEdge() },
+    { name: 'blink', isCurrentBrowser: browserCheck.isBlink() },
   ];
   return browsers;
 };
@@ -22,7 +22,7 @@ const shouldRenderForBrowser = (props, browsers) => {
   let restrictedBrowsers = [];
   let allowedBrowsers = [];
 
-  const only = props.only === true || typeof props.only === "undefined";
+  const only = props.only === true || typeof props.only === 'undefined';
   const except = props.except === true;
 
   if (except) {
@@ -73,7 +73,7 @@ Browser.propTypes = {
   mobile: PropTypes.bool,
   except: PropTypes.bool,
   only: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Browser.defaultProps = {
@@ -84,7 +84,7 @@ Browser.defaultProps = {
   ie: false,
   edge: false,
   mobile: false,
-  blink: false
+  blink: false,
 };
 
 export default Browser;

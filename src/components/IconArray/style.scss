@@ -1,0 +1,17 @@
+@import 'breakpoints';
+
+.tech-icon {
+	display: flex;
+	.icon-wrapper {
+		margin: 0px 20px;
+		img {
+			width: 20px;
+			height: 20px;
+		}
+		.tech-name {
+			text-transform: uppercase;
+			font-size: 10px;
+			padding-top: 5px;
+		}
+	}
+}
