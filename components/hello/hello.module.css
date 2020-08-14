@@ -1,0 +1,23 @@
+.wrapper {
+  margin: 50px 0px;
+  width: 60vw;
+}
+
+.hello {
+  font-size: 10rem;
+  letter-spacing: 10px;
+}
+
+.lang {
+  float: right;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    margin: 50px 0px 30px 0px;
+  }
+  .hello {
+    font-size: 6em;
+  }
+}

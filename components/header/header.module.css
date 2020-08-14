@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  font-size: 13px;
+}
+
+.title {
+  letter-spacing: 2px;
+}
+
+.command {
+  display: inline-flex;
+  padding: 10px;
+  margin-top: 2px;
+  border-radius: var(--radius);
+}
+
+.command:hover,
+.command:focus {
+  outline: none;
+  /* background: var(--lighter-gray); */
+}
+
+.command {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: none;
+}
