@@ -9,23 +9,31 @@ import styles from './socialicons.module.css'
 const SocialIcons = (props, context) => {
   return (
     <div className={styles.socialIcons}>
-      <a target="_blank" href="https://github.com/idhruvs">
+      <a rel="noreferrer" target="_blank" href="https://github.com/idhruvs">
         <Github size={20} color="var(--fg)" />
       </a>
 
-      <a target="_blank" href="https://twitter.com/idhruvs">
+      <a rel="noreferrer" target="_blank" href="https://twitter.com/idhruvs">
         <Twitter size={20} color="var(--fg)" />
       </a>
 
-      <a target="_blank" href="https://stackoverflow.com/story/idhruvs">
+      <a
+        rel="noreferrer"
+        target="_blank"
+        href="https://stackoverflow.com/story/idhruvs"
+      >
         <StackOverflow size={20} color="var(--fg)" />
       </a>
 
-      <a target="_blank" href="https://linkedin.com/dhruv-shah-">
+      <a
+        rel="noreferrer"
+        target="_blank"
+        href="https://linkedin.com/dhruv-shah-"
+      >
         <LinkedIn size={20} color="var(--fg)" />
       </a>
 
-      <a target="_blank" href="https://medium.com/@idhruv">
+      <a rel="noreferrer" target="_blank" href="https://medium.com/@idhruv">
         <Medium size={20} color="var(--fg)" />
       </a>
     </div>
