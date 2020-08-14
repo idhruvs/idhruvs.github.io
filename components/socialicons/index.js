@@ -9,7 +9,7 @@ import styles from './socialicons.module.css'
 const SocialIcons = (props, context) => {
   return (
     <div className={styles.socialIcons}>
-      <a target="_blank" href="https://github.com/idhruvs" passHref={true}>
+      <a target="_blank" href="https://github.com/idhruvs">
         <Github size={20} color="var(--fg)" />
       </a>
 
