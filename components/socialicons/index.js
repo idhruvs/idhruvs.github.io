@@ -28,7 +28,7 @@ const SocialIcons = (props, context) => {
       <a
         rel="noreferrer"
         target="_blank"
-        href="https://linkedin.com/dhruv-shah-"
+        href="https://www.linkedin.com/in/dhruv-shah-/"
       >
         <LinkedIn size={20} color="var(--fg)" />
       </a>
