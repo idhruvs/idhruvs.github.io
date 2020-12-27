@@ -23,4 +23,4 @@ export default function Hello({}) {
       <aside className={styles.lang}>[ {salutation.lang} ] </aside>
     </section>
   )
-}
+  }
